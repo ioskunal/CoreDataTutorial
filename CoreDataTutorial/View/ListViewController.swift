@@ -38,11 +38,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell") as? ItemTableViewCell else {return UITableViewCell()}
-        let student = arrStudents[indexPath.row]
-        cell.nameLabel.text = student.name
-        cell.mobileLabel.text = student.mobile
-        cell.emailLabel.text = student.email
-        cell.cityLabel.text = student.city
+        cell.student = arrStudents[indexPath.row]
         return cell
     }
     
@@ -58,5 +54,15 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         return 160
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            arrStudents = CoreDataHelper.shared.deleteStudent(indexPath)
+            self.tableViewResults.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
 }
 

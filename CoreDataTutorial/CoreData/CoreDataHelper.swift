@@ -40,4 +40,19 @@ class CoreDataHelper {
         
         return students
     }
+    
+    func deleteStudent(_ index: IndexPath) -> [Student] {
+        var students = fetchAllStudents()
+        context.delete(students[index.row])
+        students.remove(at: index.row)
+        
+        do {
+            try context.save()
+        } catch {
+            print("Cant delete")
+        }        
+        return students
+    }
+    
+    
 }

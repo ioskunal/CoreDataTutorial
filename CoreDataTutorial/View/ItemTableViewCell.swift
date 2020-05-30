@@ -17,7 +17,16 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
 
-    
+    //MARK:- VARIABLES
+
+    var student: Student!{
+        didSet{
+            nameLabel.text = student.name
+            mobileLabel.text = student.mobile
+            emailLabel.text = student.email
+            cityLabel.text = student.city
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
