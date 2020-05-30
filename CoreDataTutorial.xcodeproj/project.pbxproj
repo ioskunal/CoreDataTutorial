@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6EBC631C2482CDC3006C041A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC631B2482CDC3006C041A /* CoreDataHelper.swift */; };
+		6EBC631F2482D0A8006C041A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC631E2482D0A8006C041A /* ListViewController.swift */; };
+		6EBC63212482D300006C041A /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC63202482D300006C041A /* ItemTableViewCell.swift */; };
+		6EBC63242482D517006C041A /* Student+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC63222482D517006C041A /* Student+CoreDataClass.swift */; };
+		6EBC63252482D517006C041A /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC63232482D517006C041A /* Student+CoreDataProperties.swift */; };
 		6ED1EFAC2482CD2D00D6EDDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1EFAB2482CD2D00D6EDDB /* AppDelegate.swift */; };
 		6ED1EFB02482CD2D00D6EDDB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED1EFAF2482CD2D00D6EDDB /* ViewController.swift */; };
 		6ED1EFB32482CD2D00D6EDDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ED1EFB12482CD2D00D6EDDB /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 
 /* Begin PBXFileReference section */
 		6EBC631B2482CDC3006C041A /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		6EBC631E2482D0A8006C041A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		6EBC63202482D300006C041A /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		6EBC63222482D517006C041A /* Student+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6EBC63232482D517006C041A /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6ED1EFA82482CD2D00D6EDDB /* CoreDataTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ED1EFAB2482CD2D00D6EDDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ED1EFAF2482CD2D00D6EDDB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +47,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6EBC63262482D57A006C041A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6ED1EFB42482CD2D00D6EDDB /* CoreDataTutorial.xcdatamodeld */,
+				6EBC63222482D517006C041A /* Student+CoreDataClass.swift */,
+				6EBC63232482D517006C041A /* Student+CoreDataProperties.swift */,
+				6EBC631B2482CDC3006C041A /* CoreDataHelper.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6EBC63272482D587006C041A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6ED1EFB12482CD2D00D6EDDB /* Main.storyboard */,
+				6ED1EFAF2482CD2D00D6EDDB /* ViewController.swift */,
+				6EBC631E2482D0A8006C041A /* ListViewController.swift */,
+				6EBC63202482D300006C041A /* ItemTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6EBC63282482D59F006C041A /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				6ED1EFB92482CD2E00D6EDDB /* LaunchScreen.storyboard */,
+				6ED1EFAB2482CD2D00D6EDDB /* AppDelegate.swift */,
+				6ED1EFBC2482CD2E00D6EDDB /* Info.plist */,
+				6ED1EFB72482CD2E00D6EDDB /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		6ED1EF9F2482CD2D00D6EDDB = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +99,9 @@
 		6ED1EFAA2482CD2D00D6EDDB /* CoreDataTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				6EBC631B2482CDC3006C041A /* CoreDataHelper.swift */,
-				6ED1EFAB2482CD2D00D6EDDB /* AppDelegate.swift */,
-				6ED1EFAF2482CD2D00D6EDDB /* ViewController.swift */,
-				6ED1EFB12482CD2D00D6EDDB /* Main.storyboard */,
-				6ED1EFB72482CD2E00D6EDDB /* Assets.xcassets */,
-				6ED1EFB92482CD2E00D6EDDB /* LaunchScreen.storyboard */,
-				6ED1EFBC2482CD2E00D6EDDB /* Info.plist */,
-				6ED1EFB42482CD2D00D6EDDB /* CoreDataTutorial.xcdatamodeld */,
+				6EBC63262482D57A006C041A /* CoreData */,
+				6EBC63272482D587006C041A /* View */,
+				6EBC63282482D59F006C041A /* SupportingFiles */,
 			);
 			path = CoreDataTutorial;
 			sourceTree = "<group>";
@@ -143,7 +179,11 @@
 			files = (
 				6ED1EFB62482CD2D00D6EDDB /* CoreDataTutorial.xcdatamodeld in Sources */,
 				6ED1EFB02482CD2D00D6EDDB /* ViewController.swift in Sources */,
+				6EBC63252482D517006C041A /* Student+CoreDataProperties.swift in Sources */,
 				6EBC631C2482CDC3006C041A /* CoreDataHelper.swift in Sources */,
+				6EBC63242482D517006C041A /* Student+CoreDataClass.swift in Sources */,
+				6EBC631F2482D0A8006C041A /* ListViewController.swift in Sources */,
+				6EBC63212482D300006C041A /* ItemTableViewCell.swift in Sources */,
 				6ED1EFAC2482CD2D00D6EDDB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +329,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoreDataTutorial/Info.plist;
+				INFOPLIST_FILE = CoreDataTutorial/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,7 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = CoreDataTutorial/Info.plist;
+				INFOPLIST_FILE = CoreDataTutorial/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

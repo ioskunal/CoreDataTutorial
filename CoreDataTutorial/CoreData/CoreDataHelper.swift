@@ -28,4 +28,16 @@ class CoreDataHelper {
             print("Unable to save")
         }
     }
+    
+    func fetchAllStudents() -> [Student] {
+        var students = [Student]()
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Student")
+        do {
+            students = try context.fetch(fetchRequest) as! [Student]
+        } catch {
+            print("cant retrive data")
+        }
+        
+        return students
+    }
 }

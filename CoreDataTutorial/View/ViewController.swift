@@ -20,7 +20,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.title = "Save Here"
     }
     
     @IBAction func actionBtnSave(_ sender: Any) {
@@ -30,7 +30,11 @@ class ViewController: UIViewController {
                     "city": cityTextField.text ?? ""]
         CoreDataHelper.shared.saveData(dict: dict)
     }
-
+    
+    @IBAction func actionBtnViewList(_ sender: Any) {
+        let vc: ListViewController = self.storyboard!.instantiateViewController(identifier: "ListViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 }
 
