@@ -41,10 +41,10 @@ class CoreDataHelper {
         return students
     }
     
-    func deleteStudent(_ index: IndexPath) -> [Student] {
+    func deleteStudent(_ index: Int) -> [Student] {
         var students = fetchAllStudents()
-        context.delete(students[index.row])
-        students.remove(at: index.row)
+        context.delete(students[index])
+        students.remove(at: index)
         
         do {
             try context.save()
@@ -54,5 +54,18 @@ class CoreDataHelper {
         return students
     }
     
+    func editStudent( dict: [String: String], index: Int) {
+        let student = fetchAllStudents()[index]
+        student.name = dict["name"]
+        student.mobile = dict["mobile"]
+        student.city = dict["city"]
+        student.email = dict["email"]
+        
+        do {
+            try context.save()
+        } catch  {
+            print("Cant update")
+        }
+    }
     
 }

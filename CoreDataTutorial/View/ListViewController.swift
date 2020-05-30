@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol PassStudent {
+    func studentSelected(_ student: Student, index: Int)
+}
+
 class ListViewController: UIViewController {
 
     //MARK:- OUTLETS
@@ -17,6 +21,7 @@ class ListViewController: UIViewController {
     //MARK:- VARIABLES
 
     var arrStudents = [Student]()
+    var delegate: PassStudent?
     
     //MARK:- LIFE CYCLE
     
@@ -43,7 +48,8 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.delegate?.studentSelected(arrStudents[indexPath.row], index: indexPath.row)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -60,7 +66,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            arrStudents = CoreDataHelper.shared.deleteStudent(indexPath)
+            arrStudents = CoreDataHelper.shared.deleteStudent(indexPath.row)
             self.tableViewResults.deleteRows(at: [indexPath], with: .automatic)
         }
     }
